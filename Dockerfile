@@ -33,5 +33,7 @@ RUN apk add --no-cache \
 		libxml2 \
 		vpnc
 
-ENTRYPOINT ["/usr/local/sbin/openconnect"]
+COPY entrypoint.sh /sbin/entrypoint.sh
+
+ENTRYPOINT ["/sbin/entrypoint.sh"]
 CMD ["--help"]
